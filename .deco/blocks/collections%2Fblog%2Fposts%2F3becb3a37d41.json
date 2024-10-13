@@ -1,0 +1,9 @@
+{
+  "name": "collections/blog/posts/3becb3a37d41",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [],
+    "categories": [],
+    "extraProps": []
+  }
+}
