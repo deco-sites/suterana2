@@ -49,7 +49,7 @@ export default function HeroFlats({
               sizes="(max-width: 640px) 100vw, 30vw"
               src={image}
               alt={image}
-              decoding="async"
+                 decoding="async"
               loading="lazy"
             />
           )}
@@ -68,7 +68,7 @@ export default function HeroFlats({
             >
             </div>
             <p class="leading-[150%] md:text-md text-lg">
-              {description}
+              {description} {Deno.version.deno}
             </p>
             {cta && cta.length > 0 &&
               (
