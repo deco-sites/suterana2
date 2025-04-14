@@ -12,7 +12,7 @@ const deco = await Deco.init<Manifest>({
 
 
 // --- Deno KV ---
-const kv = await Deno.openKv();
+const kv = Deno.openKv ? await Deno.openKv() : null;
 const MESSAGE_KEY = ["current_message"]; // メッセージ保存用キー
 
 // --- HTTP Request Handler ---
@@ -24,7 +24,8 @@ async function handler(req: Request): Promise<Response> {
   if (url.pathname === "/board") {
     // '/board' の場合の処理 (以前のロジック)
     const newMessage = params.get("txt"); // 'txt' クエリパラメータを取得
-
+    
+    if(!kv) return new Response("KVなし")
     // --- 更新処理 (/board?txt=...) ---
     if (newMessage !== null && req.method === "GET") {
       const trimmedMessage = newMessage.trim();
