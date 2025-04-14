@@ -45,7 +45,7 @@
   },
   "tasks": {
     "start": "deno run -A --unstable-http --unstable-kv --env https://deco.cx/run -- deno task dev",
-    "gen": "deno run -A dev.ts --gen-only",
+    "gen": "deno run -A --unstable-kv dev.ts --gen-only",
     "play": "USE_LOCAL_STORAGE_ONLY=true deno task start",
     "component": "deno eval 'import \"deco/scripts/component.ts\"'",
     "release": "deno eval 'import \"deco/scripts/release.ts\"'",
@@ -53,7 +53,7 @@
     "check": "deno fmt && deno lint && deno check dev.ts main.ts",
     "install": "deno eval 'import \"deco/scripts/apps/install.ts\"'",
     "uninstall": "deno eval 'import \"deco/scripts/apps/uninstall.ts\"'",
-    "bundle": "deno run -A jsr:@deco/deco/scripts/bundle site",
+    "bundle": "deno run -A --unstable-kv jsr:@deco/deco/scripts/bundle site",
     "cache_clean": "rm deno.lock; deno cache -r main.ts",
     "build": "deno run -A --unstable-kv dev.ts build",
     "preview": "deno run -A --unstable-kv main.ts",
