@@ -148,6 +148,7 @@ export default function HeroFlats({
             <p class="leading-[150%] md:text-md text-lg">
               {description}<br/>
               Deno:{Deno.version.deno}<br/>
+              DenoUA: {navigator.userAgent}<br/>
               Platform: {currentPlatform()}
             </p>
             {cta && cta.length > 0 &&
